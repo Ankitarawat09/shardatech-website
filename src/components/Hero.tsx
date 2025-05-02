@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="bg-skincare-cream py-2 md:py-5 relative overflow-hidden max-h-[500px]">
+    <section className="bg-skincare-cream py-2 md:py-5 relative overflow-hidden lg:h-[550px] md:max-h-[500px] ">
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Hero Content */}
@@ -12,7 +12,7 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 text-[#404D36]">
               Nature's Gift,
               <br />
-              <span className="text-[#68784C] ">Perfectly Packaged</span>
+              <span className="text-[#68784C] ">Perfectly Packaged.</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 max-w-lg">
               Discover the pure essence of coconut with our premium organic
