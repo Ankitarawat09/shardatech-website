@@ -105,22 +105,6 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/shipping"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline transition-colors"
-                >
-                  Shipping & Delivery
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/returns"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline transition-colors"
-                >
-                  Returns & Refunds
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/privacy"
                   className="text-gray-600 hover:text-[#404D36] hover:underline transition-colors"
                 >
@@ -140,21 +124,11 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray-600 mb-4">
-              Subscribe to our newsletter for exclusive offers.
+            <h3 className="text-lg font-semibold mb-6">Address</h3>
+            <p className="text-gray-600">
+              Plot No. 32-34, Knowledge Park III, Greater Noida, Uttar Pradesh -
+              201310
             </p>
-            <form className="flex space-x-2">
-              <Input
-                placeholder="Your email address"
-                type="email"
-                className="bg-white border-skincare-pastel-green/30"
-                required
-              />
-              <Button className="bg-[#5D835D] hover:bg-[#749274] text-white">
-                Subscribe
-              </Button>
-            </form>
           </div>
         </div>
 

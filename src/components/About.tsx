@@ -1,27 +1,35 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { Button } from "./ui/button";
 
 const About = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div>
-            <h2 className="text-2xl md:text-4xl font-semibold mb-2 text-[#404D36]">About Us</h2>
+            <h2 className="text-2xl md:text-4xl font-semibold mb-2 text-[#404D36]">
+              About Us
+            </h2>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#68784C]">
               A Decade of Natural Excellence
             </h3>
             <p className="text-gray-700 mb-2 text-justify">
-            As a proud subsidiary of Sharda Corporation, UG Enterprises brings over a decade of expertise in the export and import of organic herbs, coconut products, fresh fruits, and oil seeds. Operating with the same commitment to excellence and ethical practices that defines Sharda Corporation, UG Enterprises provides seamless global trade solutions. From customs clearance to after-sales support, our dedicated team ensures efficient and worry-free service, helping businesses source premium-quality raw materials with confidence.
+              As a proud subsidiary of Sharda Corporation, UG Enterprises brings
+              over a decade of expertise in the export and import of organic
+              herbs, coconut products, fresh fruits, and oil seeds. Operating
+              with the same commitment to excellence and ethical practices that
+              defines Sharda Corporation, UG Enterprises provides seamless
+              global trade solutions. From customs clearance to after-sales
+              support, our dedicated team ensures efficient and worry-free
+              service, helping businesses source premium-quality raw materials
+              with confidence.
             </p>
             <div className="flex justify-start">
               <Link to="/about-us">
-              <button className="flex items-center text-skincare-pastel-brown hover:text-skincare-pastel-green transition-colors font-medium">
-                <span className="mr-2">Learn more</span>
-                <ArrowRight className="h-4 w-4" />
-              </button></Link>
+                <Button className="bg-[#5D835D] text-white">Learn More</Button>
+              </Link>
             </div>
           </div>
 
@@ -29,9 +37,9 @@ const About = () => {
           <div className="relative">
             <div className="bg-skincare-light-green rounded-full absolute -z-10 w-3/4 h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
             <img
-              src="public/assets/dummy.jpg"
+              src="/assets/coconut.jpg"
               alt="Natural skincare ingredients"
-              className="rounded-lg shadow-lg mx-auto relative z-10"
+              className="rounded-lg shadow-lg mx-auto relative z-10 w-[500px] h-[320px] object-cover"
             />
           </div>
         </div>
