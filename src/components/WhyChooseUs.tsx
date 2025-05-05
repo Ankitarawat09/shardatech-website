@@ -3,31 +3,31 @@ const Stats = () => {
     {
       label: "Manufacturing excellence",
       description: "Innovative Production, Uncompromising Quality",
-      image: "/assets/excellence.avif",
+      image: "/assets/w3.jpg",
     },
     {
       label: "Reputed Brand Presence",
       description:
         "A Legacy of Trust and Excellence Across Our Group Companies",
-      image: "/assets/Reputedbrand.avif",
+      image: "/assets/w5.jpg",
     },
     {
       label: "Sourcing excellence",
       description:
         "We Source the Best from Trusted Origins to Deliver the Finest to the World",
-      image: "/assets/sourcing.avif",
+      image: "/assets/w4.jpg",
     },
     {
       label: "Global Connections",
       description:
         "Connecting You to a World of Possibilities Through Our Global Network",
-      image: "/assets/Globalconnections.avif",
+      image: "/assets/w2.jpg",
     },
     {
       label: "Streamlined Shipping",
       description:
         "Connecting You to a World of Possibilities Through Our Global Network",
-      image: "/assets/Streamlinedshipping.avif",
+      image: "/assets/w1.jpg",
     },
   ];
 
