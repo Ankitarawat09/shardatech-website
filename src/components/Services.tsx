@@ -22,7 +22,7 @@ const Services = () => {
 
       description:
         "Our methanol products are known for their versatility and high quality, making them ideal for applications in fuel, solvents, chemicals, and more.",
-      image: "/assets/dummy.jpg",
+      image: "/assets/MTBE.png",
       isLink: false,
     },
     {
@@ -30,7 +30,7 @@ const Services = () => {
 
       description:
         "We offer a trusted portfolio of high-quality Active Pharmaceutical Ingredients (APIs) and cutting-edge Orally Disintegrating Strips (ODS), delivering innovative solutions to meet evolving healthcare needs.",
-      image: "/assets/dummy.jpg",
+      image: "/assets/pharma.png",
       isLink: false,
     },
     {
@@ -38,7 +38,7 @@ const Services = () => {
 
       description:
         "Harness the wisdom of nature with our powerful herbal remedies - crafted to restore balance, boost immunity, and support your journey to lasting wellness.",
-      image: "/assets/dummy.jpg",
+      image: "/assets/herbal.png",
       isLink: false,
     },
     {
@@ -46,7 +46,7 @@ const Services = () => {
 
       description:
         "Bulk supply of Distillers Dried Grains with Solubles (DDGS) and Corn Gluten, offering premium protein and energy to optimize ruminant health and performance, while ensuring a sustainable and cost-effective feed solution.",
-      image: "/assets/dummy.jpg",
+      image: "/assets/animal-feeds.png",
       isLink: false,
     },
     {
@@ -62,7 +62,7 @@ const Services = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6 md:px-10">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          From the Lap of Mother Nature
+          Integrated Solutions across Industries.
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -13,18 +13,15 @@ const About = () => {
               About Us
             </h2>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#68784C]">
-              A Decade of Natural Excellence
+              A Decade of Exporting Excellence
             </h3>
             <p className="text-gray-700 mb-2 text-justify">
-              As a proud subsidiary of Sharda Corporation, UG Enterprises brings
-              over a decade of expertise in the export and import of organic
-              herbs, coconut products, fresh fruits, and oil seeds. Operating
-              with the same commitment to excellence and ethical practices that
-              defines Sharda Corporation, UG Enterprises provides seamless
-              global trade solutions. From customs clearance to after-sales
-              support, our dedicated team ensures efficient and worry-free
-              service, helping businesses source premium-quality raw materials
-              with confidence.
+              With over a decade of experience, UG Enterprises is a trusted
+              leader in the manufacturing, sourcing, and export of high-quality
+              coconut products, methanol, herbal medicines, pharmaceuticals, and
+              animal feed like DDGS. Serving a wide range of clients—from local
+              factories to global markets—we ensure a seamless and reliable
+              supply of essential raw materials for the food industry.
             </p>
             <div className="flex justify-start">
               <Link to="/about-us">
@@ -37,9 +34,9 @@ const About = () => {
           <div className="relative">
             <div className="bg-skincare-light-green rounded-full absolute -z-10 w-3/4 h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
             <img
-              src="/assets/coconut.jpg"
+              src="/assets/About.png"
               alt="Natural skincare ingredients"
-              className="rounded-lg shadow-lg mx-auto relative z-10 w-[500px] h-[320px] object-cover"
+              className="rounded-lg mx-auto relative z-10 w-[400px]  object-cover"
             />
           </div>
         </div>

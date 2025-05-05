@@ -16,48 +16,43 @@ interface SlideContent {
 // Slide content data
 const slideContents: SlideContent[] = [
   {
-    title: "Nature's Gift,",
-    highlightText: "Perfectly Packaged.",
-    description:
-      "Discover the pure essence of coconut with our premium organic products, sustainably harvested and crafted with care.",
-    image:
-      "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
-    bgColor: "bg-skincare-cream",
-  },
-  {
-    title: "Pure Coconut Oil,",
-    highlightText: "Superior Quality.",
-    description:
-      "Our cold-pressed coconut oil preserves all the natural nutrients and aroma that makes our products stand out from the rest.",
-    image:
-      "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
-    bgColor: "bg-skincare-cream",
-  },
-  {
-    title: "Sustainably Sourced,",
-    highlightText: "Ethically Produced.",
-    description:
-      "We work directly with local farmers to ensure fair wages and environmentally friendly harvesting practices.",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
-    bgColor: "bg-skincare-cream",
-  },
-  {
-    title: "From Farm to Home,",
-    highlightText: "With Love.",
-    description:
-      "Every product is handled with care from harvest to packaging, ensuring the highest quality reaches your doorstep.",
-    image:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
-    bgColor: "bg-skincare-cream",
-  },
-  {
     title: "Coconut",
-    highlightText: "For Healthy Living.",
+    highlightText: "Products.",
     description:
       "We offer a wide range of coconut kernel and coconut water-based products, rich in nutritional value and abundant in essential vitamins and minerals.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
+    image: "/assets/coconuts.png",
+    bgColor: "bg-skincare-cream",
+  },
+  {
+    title: "Animal Feeds,",
+    highlightText: "Superior Quality.",
+    description:
+      "Bulk supply of Distillers Dried Grains with Solubles (DDGS) and Corn Gluten, offering premium protein and energy to optimize ruminant health and performance, while ensuring a sustainable and cost-effective feed solution.",
+    image: "/assets/animal-feeds.png",
+    bgColor: "bg-skincare-cream",
+  },
+  {
+    title: "Herbal",
+    highlightText: "Medicines.",
+    description:
+      "Harness the wisdom of nature with our powerful herbal remedies - crafted to restore balance, boost immunity, and support your journey to lasting wellness.",
+    image: "/assets/herbal.png",
+    bgColor: "bg-skincare-cream",
+  },
+  {
+    title: "Pharmaceutical,",
+    highlightText: "Supplies.",
+    description:
+      "We offer a trusted portfolio of high-quality Active Pharmaceutical Ingredients (APIs) and cutting-edge Orally Disintegrating Strips (ODS), delivering innovative solutions to meet evolving healthcare needs.",
+    image: "/assets/pharma.png",
+    bgColor: "bg-skincare-cream",
+  },
+  {
+    title: "Methanol",
+    highlightText: "Derivatives.",
+    description:
+      "Our methanol products are known for their versatility and high quality, making them ideal for applications in fuel, solvents, chemicals, and more.",
+    image: "/assets/Acetic-acid.png",
     bgColor: "bg-skincare-cream",
   },
 ];
@@ -72,7 +67,7 @@ const Hero = () => {
       setCurrentSlide((prev) =>
         prev === slideContents.length - 1 ? 0 : prev + 1
       );
-    }, 6000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
@@ -139,11 +134,21 @@ const Hero = () => {
 
           {/* Image Side */}
           <div className="relative h-full flex items-center justify-center">
-            <img
-              src={slideContents[currentSlide].image}
-              alt={`Slide ${currentSlide + 1}`}
-              className="w-full max-w-[480px] h-auto object-cover rounded-lg shadow-lg z-10 relative hidden md:block transition-opacity duration-500 ease-in-out"
-            />
+            {slideContents.map((slide, index) => (
+              <img
+                key={index}
+                src={slide.image}
+                alt={`Slide ${index + 1}`}
+                className={`w-full max-w-[480px] h-[300px] object-cover rounded-lg shadow-lg z-10 absolute 
+        transition-all duration-700 ease-in-out
+        ${
+          index === currentSlide
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-4"
+        } 
+        ${index === currentSlide ? "block" : "hidden"} md:block`}
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const Navbar = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/">
-            <img src="/assets/logo.jpg" className="w-40" />
+            <img src="/assets/logo.jpg" className="w-48" />
           </Link>
 
           {/* Desktop Navigation */}
