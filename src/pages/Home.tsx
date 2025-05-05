@@ -1,11 +1,11 @@
-
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import Products from "@/components/Products";
+
 import Contact from "@/components/Contact";
+import Products from "@/components/HomeProduct";
 
 const Home = () => {
   return (
