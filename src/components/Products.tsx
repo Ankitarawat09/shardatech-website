@@ -301,7 +301,7 @@ const Products = () => {
       name: "Rice DDGS",
       slug: "rice-ddgs",
       category: "Animal Feeds",
-      image: "assets/dummy.jpg",
+      image: "assets/rice-ddgs.png",
       overview:
         "High-protein co-product from rice ethanol production, ideal for cattle, poultry, swine, aquaculture, and pet feed.",
       description:
