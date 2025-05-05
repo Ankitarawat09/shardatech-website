@@ -39,12 +39,15 @@ const Stats = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center text-white">
           {stats.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div className="w-24 h-24 md:w-28 md:h-28 mb-3">
+            <div
+              key={index}
+              className="flex flex-col items-center border-white"
+            >
+              <div className="w-24 h-24 md:w-[11rem] md:h-[11rem] mb-3 p-2 border border-white  rounded-full border-dashed">
                 <img
                   src={stat.image}
                   alt={stat.label}
-                  className="w-full h-full object-cover rounded-full border-2 border-white"
+                  className="w-full h-full object-cover rounded-full"
                 />
               </div>
               <h3 className="font-semibold text-lg mb-1">{stat.label}</h3>
