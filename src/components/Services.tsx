@@ -1,53 +1,59 @@
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  ArrowBigRight,
-  ArrowRightFromLine,
-  ArrowRightIcon,
-  ChevronRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const Services = () => {
   const services = [
     {
       title: "Coconut",
-      icon: "🥥",
+
       description:
         "We offer a wide range of coconut kernel and coconut water-based products, rich in nutritional value and abundant in essential vitamins and minerals.",
+      image: "/assets/coconut.jpg",
       isLink: false,
     },
     {
       title: "Methanol",
-      icon: "🧪",
+
       description:
         "Our methanol products are known for their versatility and high quality, making them ideal for applications in fuel, solvents, chemicals, and more.",
+      image: "/assets/dummy.jpg",
       isLink: false,
     },
     {
       title: "Pharmaceuticals",
-      icon: "💊",
+
       description:
         "We offer a trusted portfolio of high-quality Active Pharmaceutical Ingredients (APIs) and cutting-edge Orally Disintegrating Strips (ODS), delivering innovative solutions to meet evolving healthcare needs.",
+      image: "/assets/dummy.jpg",
       isLink: false,
     },
     {
       title: "Herbal Medicines",
-      icon: "🌿",
+
       description:
         "Harness the wisdom of nature with our powerful herbal remedies - crafted to restore balance, boost immunity, and support your journey to lasting wellness.",
+      image: "/assets/dummy.jpg",
       isLink: false,
     },
     {
       title: "Animal Feeds",
-      icon: "🐄",
+
       description:
         "Bulk supply of Distillers Dried Grains with Solubles (DDGS) and Corn Gluten, offering premium protein and energy to optimize ruminant health and performance, while ensuring a sustainable and cost-effective feed solution.",
+      image: "/assets/dummy.jpg",
       isLink: false,
     },
     {
       title: "View Our Products",
       icon: "",
       description: "",
+      image: "",
       isLink: true,
     },
   ];
@@ -64,34 +70,49 @@ const Services = () => {
             !service.isLink ? (
               <Card
                 key={index}
-                className="border border-gray-100 hover:border-skincare-pastel-green transition-all duration-300"
+                className="border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden group h-[280px]"
               >
-                <CardContent className="md:p-8 p-2 text-center">
-                  <div className="flex md:flex-col">
-                    <div className="text-4xl mb-4 text-skincare-pastel-green">
-                      {service.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold pt-2 pl-4 md:pl-0">
+                <div className="relative w-full h-full">
+                  {/* Image Background */}
+                  <div className="absolute inset-0 w-full h-full">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Title Overlay - Always Visible */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
+                    <h3 className="text-2xl font-semibold text-white mb-2">
                       {service.title}
                     </h3>
-                    <p className="hidden md:block text-gray-600">
-                      {service.description}
-                    </p>
                   </div>
-                </CardContent>
+
+                  {/* Description Overlay - Visible on Hover */}
+                  <div className="absolute inset-0 bg-[#5D835D]/90 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="text-center">
+                      <h3 className="text-2xl font-semibold text-white mb-3">
+                        {service.title}
+                      </h3>
+                      <p className="text-white">{service.description}</p>
+                    </div>
+                  </div>
+                </div>
               </Card>
             ) : (
               <Card
                 key={index}
-                className="border bg-[#5D835D] border-gray-100 hover:border-skincare-pastel-green transition-all duration-300"
+                className="border bg-[#5D835D] border-gray-100 hover:bg-[#4A694A] transition-all duration-300 h-[280px] flex items-center justify-center"
               >
-                <Link to="/products">
-                  <div className="flex flex-col justify-center items-center md:pt-16">
-                    <ArrowRightIcon size={70} className="text-white" />
-                    <h3 className="text-white text-[20px] md:text-[32px]">
-                      {service.title}
-                    </h3>
-                  </div>
+                <Link
+                  to="/products"
+                  className="w-full h-full flex flex-col justify-center items-center p-6"
+                >
+                  <ArrowRight size={70} className="text-white mb-4" />
+                  <h3 className="text-white text-[20px] md:text-[32px]">
+                    {service.title}
+                  </h3>
                 </Link>
               </Card>
             )

@@ -1,65 +1,74 @@
-import { Check } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-const WhyChooseUs = () => {
-  const reasons = [
-    "Manufacturing excellence",
-    "Reputed Brand Presence",
-    "Sourcing excellence",
-    "Global Connections",
-    "Streamlined Shipping",
+const Stats = () => {
+  const stats = [
+    {
+      label: "Manufacturing excellence",
+      description: "Innovative Production, Uncompromising Quality",
+      image: "/assets/coconut.jpg",
+    },
+    {
+      label: "Reputed Brand Presence",
+      description:
+        "A Legacy of Trust and Excellence Across Our Group Companies",
+      image: "/assets/coconut.jpg",
+    },
+    {
+      label: "Sourcing excellence",
+      description:
+        "We Source the Best from Trusted Origins to Deliver the Finest to the World",
+      image: "/assets/coconut.jpg",
+    },
+    {
+      label: "Global Connections",
+      description:
+        "Connecting You to a World of Possibilities Through Our Global Network",
+      image: "/assets/coconut.jpg",
+    },
+    {
+      label: "Streamlined Shipping",
+      description:
+        "Connecting You to a World of Possibilities Through Our Global Network",
+      image: "/assets/coconut.jpg",
+    },
   ];
 
   return (
-    <section className="py-16 bg-skincare-cream">
+    <section className="py-12 bg-[#68784C]">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-white">
+        Why Choose UG Enterprises
+      </h2>
       <div className="container mx-auto px-6 md:px-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
-          <div className="relative order-2 md:order-1">
-            <div className="bg-skincare-pastel-green rounded-full absolute -z-10 w-3/4 h-3/4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="hidden md:block">
-              <img
-                src="assets/dummy.jpg"
-                alt="Natural skincare ingredients"
-                className="rounded-lg shadow-lg mx-auto relative z-10"
-              />
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="order-1 md:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Why Choose Us
-            </h2>
-
-            <Card className="border-none shadow-lg bg-white mb-8">
-              <CardContent className="p-6">
-                <p className="text-gray-700">
-                  With over a decade of industry experience, we have established
-                  ourselves as a trusted name in the global trade of organic
-                  herbs, premium coconut products, fresh fruits, and
-                  high-quality oil seeds. Our long-standing commitment to
-                  quality, sustainability, and customer satisfaction sets us
-                  apart in a competitive market.
-                </p>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          {stats.map((stat, index) => (
+            <Card className="overflow-hidden border border-gray-100 hover:border-skincare-pastel-green transition-all duration-300">
+              <div className="relative pt-[100%]">
+                <img
+                  src={stat.image}
+                  alt={stat.label}
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="py-3 px-6">
+                <h3 className="font-semibold text-lg mb-2 ">{stat.label}</h3>
+                <p className="text-[14px]">${stat.description}</p>
               </CardContent>
+              {/* <CardFooter className="px-6 pt-0">
+                <Link
+                  to={`/productdescription/${product?.slug}`}
+                  className="w-full"
+                >
+                  <Button className="w-full bg-[#5D835D] hover:bg-[#749274]">
+                    Read More
+                  </Button>
+                </Link>
+              </CardFooter> */}
             </Card>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {reasons.map((reason, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="bg-skincare-pastel-green rounded-full p-1 mr-3">
-                    <Check className="h-4 w-4 text-white" />
-                  </div>
-                  <span>{reason}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default WhyChooseUs;
+export default Stats;
