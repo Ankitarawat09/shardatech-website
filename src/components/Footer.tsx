@@ -12,9 +12,10 @@ const Footer = () => {
           <div>
             <h2 className="text-xl font-bold mb-6">UG ENTERPRISES</h2>
             <p className="text-gray-600 mb-6">
-              We are dedicated to providing high-quality products using natural
-              ingredients. Our mission is to help everyone achieve a healthy
-              lifestyle.
+              With over a decade of expertise, UG Enterprises is a trusted name
+              in manufacturing, sourcing, and exporting premium coconut
+              products, ethanol, herbal medicines, pharmaceuticals, and animal
+              feed such as DDGS.
             </p>
             <div className="flex space-x-4">
               <a
