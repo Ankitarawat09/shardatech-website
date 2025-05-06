@@ -206,14 +206,23 @@ const FAQs = () => {
           our customer support team.
         </p>
 
-        <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
-          <Accordion type="multiple" className="w-full">
-            {faqData.map((section, i) => (
-              <AccordionItem key={i} value={`section-${i}`}>
-                <AccordionTrigger className="text-left text-xl font-semibold py-4">
+        <div className="space-y-8 max-w-3xl mx-auto">
+          {faqData.map((section, i) => (
+            <Accordion
+              type="single"
+              collapsible
+              key={i}
+              className="bg-white rounded-lg shadow-md"
+            >
+              <AccordionItem
+                value={`section-${i}`}
+                className="border border-gray-200 rounded-md overflow-hidden transition-colors"
+              >
+                <AccordionTrigger className="text-left text-xl font-semibold p-4 transition-colors data-[state=open]:bg-skincare-light-green">
                   {section.category}
                 </AccordionTrigger>
-                <AccordionContent className="space-y-6 text-gray-800 pt-2 pb-4">
+
+                <AccordionContent className="space-y-6 text-gray-800 px-4 pb-4 pt-2">
                   {section.items.map((faq, index) => (
                     <div key={index}>
                       <p className="font-semibold">{faq.question}</p>
@@ -222,8 +231,8 @@ const FAQs = () => {
                   ))}
                 </AccordionContent>
               </AccordionItem>
-            ))}
-          </Accordion>
+            </Accordion>
+          ))}
         </div>
       </div>
     </div>

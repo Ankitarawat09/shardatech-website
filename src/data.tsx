@@ -449,7 +449,7 @@ const products: Product[] = [
     name: "Active Pharmaceutical Ingredients (APIs)",
     slug: "apis",
     category: "Pharmaceuticals",
-    image: "assets/Acetic-acid.png",
+    image: "assets/pharm1.jpg",
     overview:
       "Our high-performance Active Pharmaceutical Ingredients (APIs) are at the heart of successful, market-ready pharmaceutical products.",
     description:
@@ -568,7 +568,7 @@ const products: Product[] = [
     name: "Orally Disintegrating Strips (ODS)",
     slug: "ods",
     category: "Pharmaceuticals",
-    image: "assets/Acetic-acid.png",
+    image: "assets/pharm2.jpg",
     overview:
       "Innovative drug delivery system for rapid absorption and improved patient compliance.",
     description:
