@@ -1,3 +1,8 @@
+type PharmaceuticalCategory = {
+  name: string;
+  ingredients: string[];
+};
+
 type Product = {
   id: number;
   name: string;
@@ -6,13 +11,15 @@ type Product = {
   image: string;
   overview: string;
   description: string;
-  sizing: {
+  sizing?: {
     heading: string;
     description: string;
   }[];
-  sourcing: string;
-  features: string[];
+  sourcing?: string;
+  features?: string[];
+  pharmaceuticalCategories?: PharmaceuticalCategory[];
 };
+
 const products: Product[] = [
   {
     id: 1,
@@ -437,5 +444,141 @@ const products: Product[] = [
       "Comes with comprehensive technical documentation",
     ],
   },
+  {
+    id: 14,
+    name: "Active Pharmaceutical Ingredients (APIs)",
+    slug: "apis",
+    category: "Pharmaceuticals",
+    image: "assets/Acetic-acid.png",
+    overview:
+      "Our high-performance Active Pharmaceutical Ingredients (APIs) are at the heart of successful, market-ready pharmaceutical products.",
+    description:
+      "As the core bioactive components responsible for delivering therapeutic effects, our APIs are engineered to meet the highest international standards—ensuring your formulations are not just effective, but also trusted and compliant.",
+    pharmaceuticalCategories: [
+      {
+        name: "Topical Anesthetic/Scar Cream",
+        ingredients: [
+          "Baclofen",
+          "Capsaicin",
+          "Celecoxib",
+          "Cyclobenzaprine",
+          "Diclofenac Sodium",
+          "Doxepin HCL",
+          "Duloxetine",
+          "Fluocinonide",
+          "Fluticasone",
+          "Gabapentin",
+          "Levocetirizine DI HCL",
+          "Lidocaine",
+          "Pentoxifylline",
+          "Piroxicam",
+          "Prilocaine",
+          "Topiramate",
+        ],
+      },
+      {
+        name: "GERD/Gastric Ulcers",
+        ingredients: [
+          "Aluminum Hydroxide",
+          "Bismuth Salicylate",
+          "Calcium Carbonate",
+          "Cimetidine",
+          "Dimethicone",
+          "Esomeprazole",
+          "Famotidine",
+          "Hyoscine Butylbromide",
+          "Lansoprazole",
+          "Levosulpiride",
+          "Magaldrate",
+          "Magnesium Hydroxide",
+          "Metoclopramide",
+          "Omeprazole",
+          "Magnesium Dihydrate",
+          "Ranitidine",
+          "Simethicone",
+          "Vonoprazan",
+        ],
+      },
+      {
+        name: "Erectile Dysfunction/Sexual Health",
+        ingredients: [
+          "Avanafil",
+          "Sertraline",
+          "Sildenafil",
+          "Tadalafil",
+          "Vardenafil",
+        ],
+      },
+      {
+        name: "Hair Regrowth",
+        ingredients: [
+          "Biotin",
+          "Dutasteride",
+          "Finasteride",
+          "Minoxidil",
+          "Nanoxidil",
+        ],
+      },
+      {
+        name: "Peptides",
+        ingredients: [
+          "BPC-157",
+          "Collagen peptides",
+          "GHK-Cu",
+          "Keratin peptides",
+          "Liraglutide",
+          "Semaglutide",
+        ],
+      },
+      {
+        name: "Anti-Anxiety",
+        ingredients: [
+          "Alprazolam",
+          "Buspirone",
+          "Citalopram",
+          "Diazepam",
+          "Duloxetine",
+          "Escitalopram",
+          "Fluoxetine",
+          "Lorazepam",
+          "Propranolol",
+          "Sertraline",
+          "Venlafaxine",
+        ],
+      },
+      {
+        name: "Hormone Therapy",
+        ingredients: [
+          "Anastrozole",
+          "Clomiphene Citrate",
+          "Conjugated Estrogens",
+          "Estradiol",
+          "Glutathione",
+          "Medroxyprogesterone",
+          "Progesterone",
+          "Somatropin",
+          "Testosterone Cypionate",
+          "Testosterone Enanthate",
+        ],
+      },
+    ],
+  },
+  {
+    id: 15,
+    name: "Orally Disintegrating Strips (ODS)",
+    slug: "ods",
+    category: "Pharmaceuticals",
+    image: "assets/Acetic-acid.png",
+    overview:
+      "Innovative drug delivery system for rapid absorption and improved patient compliance.",
+    description:
+      "Our Orally Disintegrating Strips (ODS) technology provides a convenient and effective alternative to traditional dosage forms.",
+    pharmaceuticalCategories: [
+      // You can include a subset or different categories here if needed
+      // Or use the same structure as above if it's the same data
+    ],
+  },
+  // ... (other products)
 ];
+
 export default products;
