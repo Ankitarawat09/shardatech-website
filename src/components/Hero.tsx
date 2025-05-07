@@ -27,8 +27,8 @@ const slideContents: SlideContent[] = [
     title: "Animal Feeds,",
     highlightText: "Superior Quality.",
     description:
-      "Bulk supply of Distillers Dried Grains with Solubles (DDGS) and Corn Gluten, offering premium protein and energy to optimize ruminant health and performance, while ensuring a sustainable and cost-effective feed solution.",
-    image: "/assets/animal-feeds.png",
+      "Bulk supply of DDGS and Corn Gluten, offering protein and energy to optimize health and performance, while ensuring a sustainable and cost-effective feed solution.",
+    image: "/assets/AnimalFeed.png",
     bgColor: "bg-skincare-cream",
   },
   {
@@ -43,8 +43,8 @@ const slideContents: SlideContent[] = [
     title: "Pharmaceutical,",
     highlightText: "Supplies.",
     description:
-      "We offer a trusted portfolio of high-quality Active Pharmaceutical Ingredients (APIs) and cutting-edge Orally Disintegrating Strips (ODS), delivering innovative solutions to meet evolving healthcare needs.",
-    image: "/assets/pharma.png",
+      "We offer a trusted portfolio of high-quality APIs and cutting-edge ODS, delivering innovative solutions to meet evolving healthcare needs.",
+    image: "/assets/pharma.jpg",
     bgColor: "bg-skincare-cream",
   },
   {
@@ -52,7 +52,7 @@ const slideContents: SlideContent[] = [
     highlightText: "Derivatives.",
     description:
       "Our methanol products are known for their versatility and high quality, making them ideal for applications in fuel, solvents, chemicals, and more.",
-    image: "/assets/Acetic-acid.png",
+    image: "/assets/methanol.png",
     bgColor: "bg-skincare-cream",
   },
 ];

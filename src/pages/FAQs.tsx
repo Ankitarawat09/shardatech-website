@@ -45,11 +45,6 @@ const faqData = [
     category: "Quality Assurance and Certifications",
     items: [
       {
-        question: "Are your products certified organic or non-GMO?",
-        answer:
-          "Some products are certified organic, and we strive to meet non-GMO standards. Certifications are available upon request.",
-      },
-      {
         question: "What quality control measures do you have in place?",
         answer:
           "We conduct regular testing and analysis at various production stages to ensure international quality standards.",

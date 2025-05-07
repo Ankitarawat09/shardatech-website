@@ -5,7 +5,6 @@ import Products from "@/components/Products";
 import ExploreMore from "./ExploreMore";
 import products from "@/data";
 import PharmaceuticalsSection from "./PharmaceuticalSection";
-
 type Product = {
   id: number;
   name: string;
@@ -38,7 +37,13 @@ const ProductDesc = () => {
     );
   }
 
-  const tabOptions = ["Description", "Features", "Sizing", "Sourcing"];
+  const tabOptions = [
+    "Description",
+    "Features",
+    "Sizing",
+    "Sourcing",
+    "Applications",
+  ];
 
   return (
     <section className="py-10 bg-white">
@@ -111,6 +116,16 @@ const ProductDesc = () => {
               {activeTab === "Sourcing" && (
                 <div>
                   <p className="text-gray-700">{product.sourcing}</p>
+                </div>
+              )}
+
+              {activeTab === "Applications" && (
+                <div>
+                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                    {product.application.map((application, idx) => (
+                      <li key={idx}>{application}</li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>

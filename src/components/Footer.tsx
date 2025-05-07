@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
@@ -11,11 +9,9 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h2 className="text-xl font-bold mb-6">UG ENTERPRISES</h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-black-600 mb-6">
               With over a decade of expertise, UG Enterprises is a trusted name
-              in manufacturing, sourcing, and exporting premium coconut
-              products, ethanol, herbal medicines, pharmaceuticals, and animal
-              feed such as DDGS.
+              in manufacturing, sourcing, and exporting premium products.
             </p>
             <div className="flex space-x-4">
               <a
@@ -52,7 +48,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline transition-colors"
+                  className="text-black-600 hover:text-[#404D36] hover:underline transition-colors"
                 >
                   Home
                 </Link>
@@ -60,7 +56,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/products"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline transition-colors"
+                  className="text-black-600 hover:text-[#404D36] hover:underline transition-colors"
                 >
                   Products
                 </Link>
@@ -68,7 +64,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/about-us"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline transition-colors"
+                  className="text-black-600 hover:text-[#404D36] hover:underline transition-colors"
                 >
                   About Us
                 </Link>
@@ -76,7 +72,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/blog"
-                  className="text-gray-600 hover:text-[#404D36]  hover:underline transition-colors"
+                  className="text-black-600 hover:text-[#404D36]  hover:underline transition-colors"
                 >
                   Blog
                 </Link>
@@ -84,7 +80,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/faqs"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline  transition-colors"
+                  className="text-black-600 hover:text-[#404D36] hover:underline  transition-colors"
                 >
                   FAQs
                 </Link>
@@ -92,7 +88,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline transition-colors"
+                  className="text-black-600 hover:text-[#404D36] hover:underline transition-colors"
                 >
                   Contact
                 </Link>
@@ -107,7 +103,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/privacy"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline transition-colors"
+                  className="text-black-600 hover:text-[#404D36] hover:underline transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -115,7 +111,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/terms"
-                  className="text-gray-600 hover:text-[#404D36] hover:underline  transition-colors"
+                  className="text-black-600 hover:text-[#404D36] hover:underline  transition-colors"
                 >
                   Terms & Conditions
                 </Link>
@@ -124,17 +120,26 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Address</h3>
-            <p className="text-gray-600">
-              Plot No. 32-34, Knowledge Park III, Greater Noida, Uttar Pradesh -
-              201310
-            </p>
+          <div className="flex flex-col gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Contact Address</h3>
+              <p className="text-black-600">
+                Plot No. 32-34, Knowledge Park III, Greater Noida, Uttar Pradesh
+                - 201310
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Branch Address</h3>
+              <p className="text-black-600">
+                Agusttya Inc FZC, Office No. E2-128, F-39, Hamriyah Free Zone
+                Sharjah United Arab Emirates
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+        <div className="border-t border-gray-200 mt-12 pt-8 text-center text-black-600">
           <p>
             © {new Date().getFullYear()} UG ENTERPRISES. All rights reserved.
           </p>

@@ -17,6 +17,7 @@ type Product = {
   }[];
   sourcing?: string;
   features?: string[];
+  application?: string[];
   pharmaceuticalCategories?: PharmaceuticalCategory[];
 };
 
@@ -421,7 +422,7 @@ const products: Product[] = [
     overview:
       "Versatile industrial chemical used across chemical, textile, plastic, food, and cleaning industries.",
     description:
-      "Acetic Acid (glacial grade) is produced via carbonylation of methanol. In its concentrated form (≥99.8%), it serves as a core raw material for chemical manufacturing, textiles, polymers, food processing, and industrial cleaning.",
+      "Acetic Acid is a vital industrial chemical known for its versatility, high reactivity, and widespread applications across various sectors. Best recognized as the key ingredient in vinegar, acetic acid in its concentrated form (glacial acetic acid) serves as a core raw material in the chemical, textile, plastic, and food industries. Produced primarily through the carbonylation of methanol, it offers a cost-effective, scalable solution for large-scale manufacturing operations.",
     sizing: [
       {
         heading: "Purity & Grade",
@@ -437,11 +438,22 @@ const products: Product[] = [
     sourcing:
       "Manufactured through methanol carbonylation processes in large-scale plants; all shipments include TDS, COA, and SDS documentation.",
     features: [
-      "Purity ≥99.8% (Glacial Grade)",
-      "Sharp, vinegar-like odor",
-      "Fully miscible with water and most organic solvents",
-      "Essential intermediate for diverse industries",
-      "Comes with comprehensive technical documentation",
+      "Purity: ≥ 99.8% (Glacial Grade)",
+      "Appearance: Clear, colorless liquid",
+      "Odor: Sharp, vinegar-like smell",
+      "Boiling Point: 118°C",
+      "Solubility: Fully miscible with water, alcohol, and most organic solvents",
+      "Grade Available: Industrial / Technical",
+      "Chemical Formula: CH₃COOH",
+      "Supply Format: Bulk quantities for industrial use",
+      "Documentation: TDS, COA, SDS provided with every shipment",
+    ],
+    application: [
+      "Chemical Manufacturing",
+      "Textile and Fiber Industry",
+      "Plastic and Polymer Production",
+      "Food Processing (Non-industrial Grade)",
+      "Industrial Cleaning and Solvents",
     ],
   },
   {

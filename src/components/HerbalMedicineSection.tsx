@@ -1,4 +1,5 @@
 import React from "react";
+import HerbalPhotoSlider from "./HerbalPhotoSlider";
 
 const herbalData = [
   {
@@ -348,8 +349,19 @@ const herbalData = [
 const HerbalTable = () => {
   return (
     <section className=" px-4 md:px-10 bg-white">
+      <HerbalPhotoSlider />
+      <p className=" text-black-600 mb-3">
+        Harness the therapeutic power of nature with our premium herbal
+        extracts, expertly formulated for businesses seeking quality,
+        consistency, and scale. At UG Enterprises, we transform potent medicinal
+        plants into high-performance extracts that meet the rigorous demands of
+        global nutraceutical, cosmetic, food, and wellness industries. Whether
+        you’re formulating health supplements, clean-label skincare, or
+        functional foods, our extracts deliver pure, standardized active
+        compounds—backed by modern science and trusted worldwide.
+      </p>
       <h2 className="text-3xl font-bold mb-6 text-center text-[#5D835D]">
-        Herbal Products List
+        Herbal Medicines
       </h2>
 
       <div className="overflow-x-auto">

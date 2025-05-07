@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import products from "@/data";
 import HerbalTable from "./HerbalMedicineSection";
 
-// Optional separate section for Pharmaceuticals
 const PharmaceuticalsSection = () => (
   <div className="text-center text-lg font-semibold text-gray-600">
     Pharmaceutical product details will be available soon.
@@ -20,7 +20,18 @@ const Products = () => {
     "Animal Feeds",
     "Herbal Medicine",
   ];
-  const [activeCategory, setActiveCategory] = useState("Coconut");
+
+  const [searchParams] = useSearchParams();
+  const initialCategory = searchParams.get("category") || "Coconut";
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
+
+  // Update active category when URL parameter changes
+  useEffect(() => {
+    const categoryParam = searchParams.get("category");
+    if (categoryParam && productCategories.includes(categoryParam)) {
+      setActiveCategory(categoryParam);
+    }
+  }, [searchParams]);
 
   const filteredProducts = products.filter(
     (product) => product.category === activeCategory
@@ -32,26 +43,38 @@ const Products = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Our Products
         </h2>
-        <p className="text-gray-700 text-center max-w-3xl mx-auto mb-10">
+        <p className="text-black-700 text-center max-w-3xl mx-auto mb-10">
           Discover our range of premium products across industries.
         </p>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center mb-10 gap-4">
-          {productCategories.map((category) => (
-            <Button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              variant={activeCategory === category ? "default" : "outline"}
-              className={`rounded-3xl px-6 hover:bg-[#749274] hover:text-white transition duration-300 ${
-                activeCategory === category
-                  ? "bg-[#5D835D] text-white"
-                  : "text-gray-700"
-              }`}
-            >
-              {category}
-            </Button>
-          ))}
+          {productCategories.map((category) => {
+            const isActive = activeCategory === category;
+            return (
+              <Link
+                to={`?category=${category}`}
+                key={category}
+                className={`p-[1px] rounded-3xl transition-transform duration-300 ${
+                  isActive
+                    ? "border-2 border-[#5D835D] scale-110"
+                    : "border border-transparent scale-100"
+                }`}
+              >
+                <Button
+                  variant="outline"
+                  className={`rounded-3xl px-6 py-2 font-medium transition-all duration-300
+                    ${
+                      isActive
+                        ? "bg-[#5D835D] text-white"
+                        : "text-gray-700 hover:bg-[#749274] hover:text-white"
+                    }`}
+                >
+                  {category}
+                </Button>
+              </Link>
+            );
+          })}
         </div>
 
         {/* Product Grid or Pharmaceuticals Section */}

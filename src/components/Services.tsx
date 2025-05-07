@@ -1,12 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
-
 const Services = () => {
   const services = [
     {
@@ -16,6 +10,7 @@ const Services = () => {
         "We offer a wide range of coconut kernel and coconut water-based products, rich in nutritional value and abundant in essential vitamins and minerals.",
       image: "/assets/coconut.jpg",
       isLink: false,
+      category: "Coconut",
     },
     {
       title: "Methanol",
@@ -24,14 +19,16 @@ const Services = () => {
         "Our methanol products are known for their versatility and high quality, making them ideal for applications in fuel, solvents, chemicals, and more.",
       image: "/assets/MTBE.png",
       isLink: false,
+      category: "Methanol",
     },
     {
       title: "Pharmaceuticals",
 
       description:
         "We offer a trusted portfolio of high-quality Active Pharmaceutical Ingredients (APIs) and cutting-edge Orally Disintegrating Strips (ODS), delivering innovative solutions to meet evolving healthcare needs.",
-      image: "/assets/pharma.png",
+      image: "/assets/pharma.jpg",
       isLink: false,
+      category: "Pharmaceuticals",
     },
     {
       title: "Herbal Medicines",
@@ -40,14 +37,15 @@ const Services = () => {
         "Harness the wisdom of nature with our powerful herbal remedies - crafted to restore balance, boost immunity, and support your journey to lasting wellness.",
       image: "/assets/herbal.png",
       isLink: false,
+      category: "Herbal Medicine",
     },
     {
       title: "Animal Feeds",
-
       description:
         "Bulk supply of Distillers Dried Grains with Solubles (DDGS) and Corn Gluten, offering premium protein and energy to optimize ruminant health and performance, while ensuring a sustainable and cost-effective feed solution.",
       image: "/assets/animal-feeds.png",
       isLink: false,
+      category: "Animal Feeds",
     },
     {
       title: "View Our Products",
@@ -55,6 +53,7 @@ const Services = () => {
       description: "",
       image: "",
       isLink: true,
+      category: "Coconut",
     },
   ];
 
@@ -68,38 +67,41 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) =>
             !service.isLink ? (
-              <Card
+              <Link
+                to={`/products?category=${service.category}`}
                 key={index}
-                className="border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden group h-[280px]"
+                className="h-[280px]"
               >
-                <div className="relative w-full h-full">
-                  {/* Image Background */}
-                  <div className="absolute inset-0 w-full h-full">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                <Card className="border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden group h-full">
+                  <div className="relative w-full h-full">
+                    {/* Image Background */}
+                    <div className="absolute inset-0 w-full h-full">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-                  {/* Title Overlay - Always Visible */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                    <h3 className="text-2xl font-semibold text-white mb-2">
-                      {service.title}
-                    </h3>
-                  </div>
-
-                  {/* Description Overlay - Visible on Hover */}
-                  <div className="absolute inset-0 bg-[#5D835D]/90 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="text-center">
-                      <h3 className="text-2xl font-semibold text-white mb-3">
+                    {/* Title Overlay - Always Visible */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
+                      <h3 className="text-2xl font-semibold text-white mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-white">{service.description}</p>
+                    </div>
+
+                    {/* Description Overlay - Visible on Hover */}
+                    <div className="absolute inset-0 bg-[#5D835D]/90 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="text-center">
+                        <h3 className="text-2xl font-semibold text-white mb-3">
+                          {service.title}
+                        </h3>
+                        <p className="text-white">{service.description}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
             ) : (
               <Card
                 key={index}

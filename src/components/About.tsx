@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const About = () => {
   return (
-    <section className="py-10 bg-white">
+    <section className="pt-16 bg-white">
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -13,7 +13,7 @@ const About = () => {
               About Us
             </h2>
             <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#68784C]">
-              A Decade of Exporting Excellence
+              A Decade of Business Excellence
             </h3>
             <p className="text-gray-700 mb-2 text-justify">
               With over a decade of experience, UG Enterprises is a trusted

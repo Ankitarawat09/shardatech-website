@@ -13,7 +13,7 @@ const Contact = () => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 ">
               Get In Touch
             </h2>
             <p className="text-gray-700 mb-8">
@@ -47,10 +47,42 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Address</h3>
-                  <p className="text-gray-600">
+                  <h3 className="font-semibold mb-1">Corporate Address</h3>
+                  <p className="text-black-600">
                     Plot No. 32-34, Knowledge Park III, Greater Noida, Uttar
                     Pradesh - 201310
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="bg-white rounded-full p-3 mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-skincare-pastel-green"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Branch Address</h3>
+                  <p className="text-black-600">
+                    Agusttya Inc FZC, Office No. E2-128, F-39, Hamriyah Free
+                    Zone Sharjah United Arab Emirates
                   </p>
                 </div>
               </div>
@@ -74,7 +106,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Email Us</h3>
-                  <p className="text-gray-600">director@ugenterprises.com</p>
+                  <p className="text-black-600">director@ugenterprises.com</p>
                 </div>
               </div>
 
@@ -97,7 +129,17 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Call Us</h3>
-                  <p className="text-gray-600">+91 9311 578 005</p>
+                  <p className="text-black-600">+91 9311 578 005</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div>
+                  <h3 className="font-semibold mb-1">Business Hours</h3>
+                  <p className="text-black-600">
+                    Monday – Saturday: 9 AM – 6 PM (IST) (Closed on Sundays and
+                    Public Holidays)
+                  </p>
                 </div>
               </div>
             </div>

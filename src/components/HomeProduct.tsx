@@ -77,7 +77,7 @@ const Products = () => {
   ];
 
   return (
-    <section className=" hidden md:block bg-white">
+    <section className=" hidden md:block bg-white py-7">
       <div className="container mx-auto px-6 py-6 md:px-10 md:py-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Our Core Values
