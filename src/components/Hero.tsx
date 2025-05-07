@@ -11,6 +11,7 @@ interface SlideContent {
   description: string;
   image: string;
   bgColor: string;
+  link: string;
 }
 
 // Slide content data
@@ -22,6 +23,7 @@ const slideContents: SlideContent[] = [
       "We offer a wide range of coconut kernel and coconut water-based products, rich in nutritional value and abundant in essential vitamins and minerals.",
     image: "/assets/coconuts.png",
     bgColor: "bg-skincare-cream",
+    link: "/products?category=Coconut",
   },
   {
     title: "Animal Feeds,",
@@ -30,6 +32,7 @@ const slideContents: SlideContent[] = [
       "Bulk supply of DDGS and Corn Gluten, offering protein and energy to optimize health and performance, while ensuring a sustainable and cost-effective feed solution.",
     image: "/assets/AnimalFeed.png",
     bgColor: "bg-skincare-cream",
+    link: "/products?category=Animal Feeds",
   },
   {
     title: "Herbal",
@@ -38,6 +41,7 @@ const slideContents: SlideContent[] = [
       "Harness the wisdom of nature with our powerful herbal remedies - crafted to restore balance, boost immunity, and support your journey to lasting wellness.",
     image: "/assets/herbal.png",
     bgColor: "bg-skincare-cream",
+    link: "/products?category=Herbal Medicine",
   },
   {
     title: "Pharmaceutical,",
@@ -46,6 +50,7 @@ const slideContents: SlideContent[] = [
       "We offer a trusted portfolio of high-quality APIs and cutting-edge ODS, delivering innovative solutions to meet evolving healthcare needs.",
     image: "/assets/pharma.jpg",
     bgColor: "bg-skincare-cream",
+    link: "/products?category=Pharmaceuticals",
   },
   {
     title: "Methanol",
@@ -54,6 +59,7 @@ const slideContents: SlideContent[] = [
       "Our methanol products are known for their versatility and high quality, making them ideal for applications in fuel, solvents, chemicals, and more.",
     image: "/assets/methanol.png",
     bgColor: "bg-skincare-cream",
+    link: "/products?category=Methanol",
   },
 ];
 
@@ -61,7 +67,6 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Auto slide every 6 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) =>
@@ -103,7 +108,7 @@ const Hero = () => {
     >
       <div className="container mx-auto px-6 md:px-10 h-full">
         <div className="grid md:grid-cols-2 gap-8 items-center h-full">
-          {/* Content Side */}
+          {/* Text Content + Buttons */}
           <div className="z-10 transition-opacity duration-500 ease-in-out">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 text-[#404D36]">
               {slideContents[currentSlide].title}
@@ -112,11 +117,11 @@ const Hero = () => {
                 {slideContents[currentSlide].highlightText}
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 max-w-lg">
+            <p className="text-lg md:text-xl text-gray-700 max-w-lg mb-6">
               {slideContents[currentSlide].description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-5">
-              <Link to="/products">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to={slideContents[currentSlide].link}>
                 <Button className="bg-[#5D835D] hover:bg-[#4A694A] text-white">
                   Explore Products
                 </Button>
@@ -132,7 +137,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Image Side */}
+          {/* Image */}
           <div className="relative h-full flex items-center justify-center">
             {slideContents.map((slide, index) => (
               <img
@@ -140,20 +145,20 @@ const Hero = () => {
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
                 className={`w-full max-w-[480px] h-[300px] object-cover rounded-lg shadow-lg z-10 absolute 
-        transition-all duration-700 ease-in-out
-        ${
-          index === currentSlide
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4"
-        } 
-        ${index === currentSlide ? "block" : "hidden"} md:block`}
+                  transition-all duration-700 ease-in-out
+                  ${
+                    index === currentSlide
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
+                  } 
+                  ${index === currentSlide ? "block" : "hidden"} md:block`}
               />
             ))}
           </div>
         </div>
       </div>
 
-      {/* Bottom Navigation */}
+      {/* Navigation */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-8 z-20">
         {/* Dots */}
         <div className="flex gap-2">

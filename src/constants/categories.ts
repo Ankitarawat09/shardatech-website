@@ -1,0 +1,16 @@
+
+export const PRODUCT_CATEGORIES = {
+    COCONUT: 'Coconut',
+    METHANOL: 'Methanol',
+    PHARMACEUTICALS: 'Pharmaceuticals',
+    HERBAL_MEDICINE: 'Herbal Medicine',
+    ANIMAL_FEEDS: 'Animal Feeds',
+  } as const;
+  
+  export const CATEGORY_LIST = [
+    PRODUCT_CATEGORIES.COCONUT,
+    PRODUCT_CATEGORIES.METHANOL,
+    PRODUCT_CATEGORIES.PHARMACEUTICALS,
+    PRODUCT_CATEGORIES.HERBAL_MEDICINE,
+    PRODUCT_CATEGORIES.ANIMAL_FEEDS,
+  ] as const;
