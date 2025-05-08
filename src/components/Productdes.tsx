@@ -67,13 +67,13 @@ const ProductDesc = () => {
               <p className="text-gray-700">{product.overview}</p>
             </div>
 
-            <div className="flex gap-4 mb-2 flex-wrap">
+            <div className="flex gap-4 mb-2 flex-wrap justify-center">
               {tabOptions.map((tab) => (
                 <Button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   variant={activeTab === tab ? "default" : "outline"}
-                  className={`rounded-3xl px-6 hover:bg-[#749274] hover:text-white transition duration-300 ${
+                  className={`rounded-3xl px-6 hover:bg-[#749274] hover:text-white transition duration-300  ${
                     activeTab === tab
                       ? "bg-[#5D835D] text-white"
                       : "text-gray-700"
@@ -88,7 +88,9 @@ const ProductDesc = () => {
             <div className="">
               {activeTab === "Description" && (
                 <div>
-                  <p className="text-gray-700">{product.description}</p>
+                  <p className="text-gray-700 text-justify">
+                    {product.description}
+                  </p>
                 </div>
               )}
 
@@ -107,7 +109,9 @@ const ProductDesc = () => {
                   {product.sizing.map((item, index) => (
                     <div key={index}>
                       <h3 className="font-semibold text-lg">{item.heading}</h3>
-                      <p className="text-gray-700">{item.description}</p>
+                      <p className="text-gray-700 text-justify">
+                        {item.description}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -121,7 +125,7 @@ const ProductDesc = () => {
 
               {activeTab === "Applications" && (
                 <div>
-                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <ul className="list-disc list-inside text-gray-700 space-y-2  ">
                     {product.application.map((application, idx) => (
                       <li key={idx}>{application}</li>
                     ))}
@@ -133,11 +137,11 @@ const ProductDesc = () => {
         </div>
       )}
 
-      <hr className="w-[780px] h-1 mx-auto my-4 bg-skincare-pastel-green border-0 rounded-sm md:my-10 dark:bg-gray-700" />
+      <hr className="w-[200px] md:w-[780px] h-1 mx-auto my-4 bg-skincare-pastel-green border-0 rounded-sm md:my-10 dark:bg-gray-700" />
 
       {/* Products Section */}
       <div className="mt-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center md:mb-4 mb-0">
           Explore More
         </h2>
         <ExploreMore />

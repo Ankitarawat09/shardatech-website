@@ -104,13 +104,13 @@ const Hero = () => {
 
   return (
     <section
-      className={`py-2 md:py-5 relative overflow-hidden lg:h-[550px] md:max-h-[500px] transition-colors duration-500 ${slideContents[currentSlide].bgColor}`}
+      className={`py-2 md:py-5 relative overflow-hidden h-[700px] lg:h-[550px] md:max-h-[500px] transition-colors duration-500 ${slideContents[currentSlide].bgColor}`}
     >
       <div className="container mx-auto px-6 md:px-10 h-full">
-        <div className="grid md:grid-cols-2 gap-8 items-center h-full">
+        <div className="grid md:grid-cols-2 md:gap-8 items-center h-full">
           {/* Text Content + Buttons */}
           <div className="z-10 transition-opacity duration-500 ease-in-out">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 text-[#404D36]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-2 md:mb-8 text-[#404D36]">
               {slideContents[currentSlide].title}
               <br />
               <span className="text-[#68784C]">
@@ -138,13 +138,13 @@ const Hero = () => {
           </div>
 
           {/* Image */}
-          <div className="relative h-full flex items-center justify-center">
+          <div className="relative h-[350px] md:h-full flex md:items-center md:justify-center lg:items-center lg:justify-center pt-5 md:pt-0">
             {slideContents.map((slide, index) => (
               <img
                 key={index}
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className={`w-full max-w-[480px] h-[300px] object-cover rounded-lg shadow-lg z-10 absolute 
+                className={`w-full max-w-[480px] md:h-[300px] h-[250px] object-cover rounded-lg shadow-lg z-10 absolute 
                   transition-all duration-700 ease-in-out
                   ${
                     index === currentSlide
@@ -159,9 +159,9 @@ const Hero = () => {
       </div>
 
       {/* Navigation */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-8 z-20">
+      <div className="absolute bottom-24 md:bottom-8 left-0 right-0 flex justify-center items-center gap-8 z-20 ">
         {/* Dots */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 pt-5 md:pt-0">
           {slideContents.map((_, index) => (
             <button
               key={index}
@@ -178,23 +178,25 @@ const Hero = () => {
         </div>
 
         {/* Arrows */}
-        <div className="flex gap-2">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handlePrevious}
-            className="rounded-full border-[#5D835D] text-[#5D835D] hover:bg-[#5D835D] hover:text-white"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handleNext}
-            className="rounded-full border-[#5D835D] text-[#5D835D] hover:bg-[#5D835D] hover:text-white"
-          >
-            <ArrowRight className="h-4 w-4" />
-          </Button>
+        <div className="hidden md:block lg:block">
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handlePrevious}
+              className="rounded-full border-[#5D835D] text-[#5D835D] hover:bg-[#5D835D] hover:text-white"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={handleNext}
+              className="rounded-full border-[#5D835D] text-[#5D835D] hover:bg-[#5D835D] hover:text-white"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>

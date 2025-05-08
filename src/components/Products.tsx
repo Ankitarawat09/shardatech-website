@@ -85,7 +85,7 @@ const Products = () => {
             {filteredProducts.map((product) => (
               <Card
                 key={product.id}
-                className="overflow-hidden border border-gray-100 hover:border-skincare-pastel-green transition-all duration-300"
+                className="overflow-hidden border border-skincare-pastel-green hover:border-[#404D36] transform transition-transform duration-300 hover:scale-105 shadow-sm hover:shadow-lg p-4"
               >
                 <div className="relative pt-[100%]">
                   <img

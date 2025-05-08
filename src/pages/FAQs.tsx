@@ -12,7 +12,7 @@ const faqData = [
       {
         question: "What products does UG Enterprises specialize in?",
         answer: `UG Enterprises specializes in the manufacturing, sourcing, and export of high-quality products, including:
-• Coconut Products: coconut water concentrate, desiccated coconut, coconut cream, coconut milk powder, coconut oil, semi-husked coconut.
+• Coconut Products: coconut water concentrate,desiccated coconut,coconut cream,coconut milk powder, coconut oil.
 • Methanol and Methanol products
 • Herbal Medicines
 • Pharmaceuticals
