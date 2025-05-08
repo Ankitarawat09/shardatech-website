@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-const Services = () => {
+
+const ServicesCard = () => {
   const services = [
     {
       title: "Coconut",
-
       description:
         "We offer a wide range of coconut kernel and coconut water-based products, rich in nutritional value and abundant in essential vitamins and minerals.",
       image: "/assets/coconut.jpg",
@@ -14,7 +14,6 @@ const Services = () => {
     },
     {
       title: "Methanol",
-
       description:
         "Our methanol products are known for their versatility and high quality, making them ideal for applications in fuel, solvents, chemicals, and more.",
       image: "/assets/MTBE.png",
@@ -23,7 +22,6 @@ const Services = () => {
     },
     {
       title: "Pharmaceuticals",
-
       description:
         "We offer a trusted portfolio of high-quality Active Pharmaceutical Ingredients (APIs) and cutting-edge Orally Disintegrating Strips (ODS), delivering innovative solutions to meet evolving healthcare needs.",
       image: "/assets/pharma.jpg",
@@ -32,7 +30,6 @@ const Services = () => {
     },
     {
       title: "Herbal Medicines",
-
       description:
         "Harness the wisdom of nature with our powerful herbal remedies - crafted to restore balance, boost immunity, and support your journey to lasting wellness.",
       image: "/assets/herbal.png",
@@ -57,24 +54,21 @@ const Services = () => {
     },
   ];
 
-  return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-6 md:px-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Integrated Solutions across Industries.
-        </h2>
+  const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, "-");
 
+  return (
+    <section>
+      <div className="container mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) =>
             !service.isLink ? (
               <Link
-                to={`/products?category=${service.category}`}
+                to={`/product/subproductsection/${slugify(service.category)}`}
                 key={index}
                 className="h-[280px]"
               >
                 <Card className="border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden group h-full">
                   <div className="relative w-full h-full">
-                    {/* Image Background */}
                     <div className="absolute inset-0 w-full h-full">
                       <img
                         src={service.image}
@@ -83,14 +77,12 @@ const Services = () => {
                       />
                     </div>
 
-                    {/* Title Overlay - Always Visible */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
                       <h3 className="text-2xl font-semibold text-white mb-2">
                         {service.title}
                       </h3>
                     </div>
 
-                    {/* Description Overlay - Visible on Hover */}
                     <div className="absolute inset-0 bg-[#5D835D]/90 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="text-center">
                         <h3 className="text-2xl font-semibold text-white mb-3">
@@ -125,4 +117,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesCard;

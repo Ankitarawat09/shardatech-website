@@ -27,7 +27,7 @@ const products: Product[] = [
     name: "Coconut Vinegar",
     slug: "coconut-vinegar",
     category: "Coconut",
-    image: "assets/coconut-vinegar.jpg",
+    image: "/assets/coconut-vinegar.jpg",
     overview:
       "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
     description:
@@ -61,7 +61,7 @@ const products: Product[] = [
     name: "Coconut Water",
     slug: "coconut-water",
     category: "Coconut",
-    image: "assets/coconut-water.jpeg",
+    image: "/assets/coconut-water.jpeg",
     overview:
       "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
     description:
@@ -95,7 +95,7 @@ const products: Product[] = [
     name: "Coconut Oil",
     slug: "coconut-oil",
     category: "Coconut",
-    image: "assets/coconut-oil.jpg",
+    image: "/assets/coconut-oil.jpg",
     overview:
       "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
     description:
@@ -129,7 +129,7 @@ const products: Product[] = [
     name: "Coconut Virgin Oil",
     slug: "coconut-veroil",
     category: "Coconut",
-    image: "assets/virgin-c-oil.png",
+    image: "/assets/virgin-c-oil.png",
     overview:
       "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
     description:
@@ -163,7 +163,7 @@ const products: Product[] = [
     name: "Desiccated Coconut",
     slug: "desiccated-coconut",
     category: "Coconut",
-    image: "assets/dessicated-coconut.jpeg",
+    image: "/assets/dessicated-coconut.jpeg",
     overview:
       "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
     description:
@@ -197,7 +197,7 @@ const products: Product[] = [
     name: "Coconut Milk",
     slug: "coconut-milk",
     category: "Coconut",
-    image: "assets/coconut-milk.jpg",
+    image: "/assets/coconut-milk.jpg",
     overview:
       "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
     description:
@@ -231,7 +231,7 @@ const products: Product[] = [
     name: "Corn Gluten Meal",
     slug: "corn-gluten-meal",
     category: "Animal Feeds",
-    image: "assets/corn-gluten.png",
+    image: "/assets/corn-gluten.png",
     overview:
       "High-protein, energy-dense feed ingredient from corn wet milling, ideal for ruminant, poultry, swine, aquaculture, and pet diets.",
     description:
@@ -263,7 +263,7 @@ const products: Product[] = [
     name: "Corn DDGS",
     slug: "corn-ddgs",
     category: "Animal Feeds",
-    image: "assets/corn-ddgs.png",
+    image: "/assets/corn-ddgs.png",
     overview:
       "Protein-rich co-product from ethanol production, used in ruminant, poultry, swine, aquaculture, and pet food.",
     description:
@@ -294,7 +294,7 @@ const products: Product[] = [
     name: "Rice DDGS",
     slug: "rice-ddgs",
     category: "Animal Feeds",
-    image: "assets/rice-ddgs.png",
+    image: "/assets/rice-ddgs.png",
     overview:
       "High-protein co-product from rice ethanol production, ideal for cattle, poultry, swine, aquaculture, and pet feed.",
     description:
@@ -326,7 +326,7 @@ const products: Product[] = [
     name: "Formaldehyde",
     slug: "formaldehyde",
     category: "Methanol",
-    image: "assets/Formaldehyde.png",
+    image: "/assets/Formaldehyde.png",
     overview:
       "Highly versatile and reactive chemical used as a key intermediate in resins, plastics, textiles, and disinfectants.",
     description:
@@ -357,7 +357,7 @@ const products: Product[] = [
     name: "Methyl Methacrylate",
     slug: "methyl-methacrylate",
     category: "Methanol",
-    image: "assets/Methyl-methacrylate.png",
+    image: "/assets/Methyl-methacrylate.png",
     overview:
       "High-value monomer for production of acrylic plastics, coatings, adhesives, and specialty polymers.",
     description:
@@ -387,7 +387,7 @@ const products: Product[] = [
     name: "Methyl Tertiary Butyl Ether (MTBE)",
     slug: "methyl-tertiary-butyl-ether",
     category: "Methanol",
-    image: "assets/MTBE.png",
+    image: "/assets/MTBE.png",
     overview:
       "High-octane oxygenated fuel additive to improve gasoline combustion efficiency and reduce engine knocking.",
     description:
@@ -418,7 +418,7 @@ const products: Product[] = [
     name: "Acetic Acid",
     slug: "acetic-acid",
     category: "Methanol",
-    image: "assets/Acetic-acid.png",
+    image: "/assets/Acetic-acid.png",
     overview:
       "Versatile industrial chemical used across chemical, textile, plastic, food, and cleaning industries.",
     description:
@@ -461,7 +461,7 @@ const products: Product[] = [
     name: "Active Pharmaceutical Ingredients (APIs)",
     slug: "apis",
     category: "Pharmaceuticals",
-    image: "assets/pharm1.jpg",
+    image: "/assets/pharm1.jpg",
     overview:
       "Our high-performance Active Pharmaceutical Ingredients (APIs) are at the heart of successful, market-ready pharmaceutical products.",
     description:
@@ -580,7 +580,7 @@ const products: Product[] = [
     name: "Orally Disintegrating Strips (ODS)",
     slug: "ods",
     category: "Pharmaceuticals",
-    image: "assets/pharm2.jpg",
+    image: "/assets/pharm2.jpg",
     overview:
       "Innovative drug delivery system for rapid absorption and improved patient compliance.",
     description:

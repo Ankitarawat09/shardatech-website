@@ -1,62 +1,55 @@
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import products from "@/data";
 import HerbalTable from "./HerbalMedicineSection";
-import ServicesCard from "./Services";
 
-const PharmaceuticalsSection = () => (
-  <div className="text-center text-lg font-semibold text-gray-600">
-    Pharmaceutical product details will be available soon.
-  </div>
-);
+const categoryMap: Record<string, string> = {
+  coconut: "Coconut",
+  methanol: "Methanol",
+  pharmaceuticals: "Pharmaceuticals",
+  "animal-feeds": "Animal Feeds",
+  "herbal-medicine": "Herbal Medicine",
+};
 
-const Products = () => {
-  const productCategories = [
-    "Coconut",
-    "Methanol",
-    "Pharmaceuticals",
-    "Animal Feeds",
-    "Herbal Medicine",
-  ];
+const categorySlugs = Object.keys(categoryMap);
 
-  const [searchParams] = useSearchParams();
-  const initialCategory = searchParams.get("category") || "Coconut";
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
+const SubProductSection = () => {
+  const { productslug } = useParams();
+  const [activeCategory, setActiveCategory] = useState("Coconut");
 
-  // Update active category when URL parameter changes
   useEffect(() => {
-    const categoryParam = searchParams.get("category");
-    if (categoryParam && productCategories.includes(categoryParam)) {
-      setActiveCategory(categoryParam);
+    if (productslug && categoryMap[productslug]) {
+      setActiveCategory(categoryMap[productslug]);
     }
-  }, [searchParams]);
+  }, [productslug]);
 
   const filteredProducts = products.filter(
     (product) => product.category === activeCategory
   );
 
+  const getSlug = (category: string) =>
+    category.toLowerCase().replace(/\s+/g, "-");
+
   return (
-    <section className=" bg-white">
+    <section className="bg-white">
       <div className="container mx-auto px-6 py-6 md:px-10 md:py-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Our Products
+          {activeCategory} Products
         </h2>
         <p className="text-black-700 text-center max-w-3xl mx-auto mb-10">
-          Discover our range of premium products across industries.
+          Discover our range of {activeCategory} products across industries.
         </p>
-        <ServicesCard />
 
         {/* Category Filter */}
-        {/* <div className="flex flex-wrap justify-center mb-10 gap-4">
-          {productCategories.map((category) => {
+        <div className="flex flex-wrap justify-center mb-10 gap-4">
+          {Object.values(categoryMap).map((category) => {
             const isActive = activeCategory === category;
             return (
               <Link
-                to={`?category=${category}`}
                 key={category}
+                to={`/product/subproductsection/${getSlug(category)}`}
                 className={`p-[1px] rounded-3xl transition-transform duration-300 ${
                   isActive
                     ? "border-2 border-[#5D835D] scale-110"
@@ -77,10 +70,10 @@ const Products = () => {
               </Link>
             );
           })}
-        </div> */}
+        </div>
 
-        {/* Product Grid or Pharmaceuticals Section */}
-        {/* {activeCategory === "Herbal Medicine" ? (
+        {/* Product Grid or Herbal Table */}
+        {activeCategory === "Herbal Medicine" ? (
           <HerbalTable />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -103,7 +96,7 @@ const Products = () => {
                 </CardContent>
                 <CardFooter className="px-6 pt-0">
                   <Link
-                    to={`/productdescription/${product?.slug}`}
+                    to={`/product/subproductsection/productdescription/${product?.slug}`}
                     className="w-full"
                   >
                     <Button className="w-full bg-[#5D835D] hover:bg-[#749274]">
@@ -114,10 +107,10 @@ const Products = () => {
               </Card>
             ))}
           </div>
-        )} */}
+        )}
       </div>
     </section>
   );
 };
 
-export default Products;
+export default SubProductSection;

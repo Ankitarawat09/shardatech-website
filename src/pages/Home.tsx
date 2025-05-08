@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
-import Services from "@/components/Services";
+import Services from "@/components/ServicesSection";
 import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
 
