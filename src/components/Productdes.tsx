@@ -5,6 +5,22 @@ import ExploreMore from "./ExploreMore";
 import products from "@/data";
 import PharmaceuticalsSection from "./PharmaceuticalSection";
 
+type Product = {
+  id: number;
+  name: string;
+  slug: string;
+  category: string;
+  image: string;
+  overview: string;
+  description: string;
+  packaging?: {
+    heading: string;
+    description: string;
+  }[];
+  "product specification"?: string[];
+  application?: string[];
+};
+
 const ProductDesc = () => {
   const { productslug } = useParams<{ productslug: string }>();
   const [activeTab, setActiveTab] = useState("Description");
@@ -21,9 +37,8 @@ const ProductDesc = () => {
 
   const tabOptions = [
     "Description",
-    "Features",
-    "Sizing",
-    "Sourcing",
+    "Specifications",
+    "Packaging",
     "Applications",
   ];
 
@@ -55,7 +70,7 @@ const ProductDesc = () => {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   variant={activeTab === tab ? "default" : "outline"}
-                  className={`rounded-3xl px-6 hover:bg-[#749274] hover:text-white transition duration-300  ${
+                  className={`rounded-3xl px-6 hover:bg-[#749274] hover:text-white transition duration-300 ${
                     activeTab === tab
                       ? "bg-[#5D835D] text-white"
                       : "text-gray-700"
@@ -73,17 +88,18 @@ const ProductDesc = () => {
                 </p>
               )}
 
-              {activeTab === "Features" && (
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  {product.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
-                  ))}
-                </ul>
-              )}
+              {activeTab === "Specifications" &&
+                product["product specification"] && (
+                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                    {product["product specification"].map((spec, idx) => (
+                      <li key={idx}>{spec}</li>
+                    ))}
+                  </ul>
+                )}
 
-              {activeTab === "Sizing" && (
+              {activeTab === "Packaging" && product.packaging && (
                 <div className="space-y-4">
-                  {product.sizing.map((item, index) => (
+                  {product.packaging.map((item, index) => (
                     <div key={index}>
                       <h3 className="font-semibold text-lg">{item.heading}</h3>
                       <p className="text-gray-700 text-justify">
@@ -94,11 +110,7 @@ const ProductDesc = () => {
                 </div>
               )}
 
-              {activeTab === "Sourcing" && (
-                <p className="text-gray-700">{product.sourcing}</p>
-              )}
-
-              {activeTab === "Applications" && (
+              {activeTab === "Applications" && product.application && (
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
                   {product.application.map((application, idx) => (
                     <li key={idx}>{application}</li>
