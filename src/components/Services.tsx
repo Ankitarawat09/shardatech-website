@@ -44,14 +44,14 @@ const ServicesCard = () => {
       isLink: false,
       category: "Animal Feeds",
     },
-    {
-      title: "View Our Products",
-      icon: "",
-      description: "",
-      image: "",
-      isLink: true,
-      category: "Coconut",
-    },
+    // {
+    //   title: "View Our Products",
+    //   icon: "",
+    //   description: "",
+    //   image: "",
+    //   isLink: true,
+    //   category: "Coconut",
+    // },
   ];
 
   const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, "-");

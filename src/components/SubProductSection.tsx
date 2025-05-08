@@ -34,16 +34,28 @@ const SubProductSection = () => {
 
   return (
     <section className="bg-white">
-      <div className="container mx-auto px-6 py-6 md:px-10 md:py-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          {activeCategory} Products
-        </h2>
-        <p className="text-black-700 text-center max-w-3xl mx-auto mb-10">
-          Discover our range of {activeCategory} products across industries.
-        </p>
+      <div className="container mx-auto px-6 py-6 md:px-10 md:py-6 ">
+        <div className="flex pl-96 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              {activeCategory} Products
+            </h2>
+            <p className="text-black-700 text-center max-w-3xl mx-auto mb-10">
+              Discover our range of {activeCategory} products across industries.
+            </p>
+          </div>
+          <Link to="/products">
+            <Button
+              variant="outline"
+              className={`rounded-3xl md:ml-96 px-6 py-2 font-medium transition-all duration-300 bg-[#749274] text-white`}
+            >
+              Back
+            </Button>
+          </Link>
+        </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center mb-10 gap-4">
+        {/* <div className="flex flex-wrap justify-center mb-10 gap-4">
           {Object.values(categoryMap).map((category) => {
             const isActive = activeCategory === category;
             return (
@@ -70,7 +82,7 @@ const SubProductSection = () => {
               </Link>
             );
           })}
-        </div>
+        </div> */}
 
         {/* Product Grid or Herbal Table */}
         {activeCategory === "Herbal Medicine" ? (
