@@ -35,7 +35,7 @@ const ProductDesc = () => {
         <div className="container mx-auto px-6 md:px-10 flex flex-col lg:flex-row gap-8">
           <div className="max-w-md lg:max-w-xl mx-auto">
             <img
-              src={`/${product.image}`}
+              src={`${product.image}`}
               alt={product.name}
               className="w-full h-auto rounded-xl shadow"
             />
