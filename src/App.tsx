@@ -17,6 +17,7 @@ import ScrollToTop from "./scrollToTop";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import SubProductSection from "./components/SubProductSection";
+import ProductDesc from "./components/Productdes";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,10 @@ const App = () => (
             <Route
               path="/product/subproductsection/:productslug"
               element={<SubProductSection />}
+            />
+            <Route
+              path="/product/subproductsection/productdescription/:productslug"
+              element={<ProductDesc />}
             />
             <Route path="*" element={<NotFound />} />
             <Route path="/privacy" element={<Privacy />} />

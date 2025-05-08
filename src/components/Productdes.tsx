@@ -1,33 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import Products from "@/components/Products";
 import ExploreMore from "./ExploreMore";
 import products from "@/data";
 import PharmaceuticalsSection from "./PharmaceuticalSection";
-type Product = {
-  id: number;
-  name: string;
-  slug: string;
-  category: string;
-  image: string;
-  overview: string;
-  description: string;
-  sizing: {
-    heading: string;
-    description: string;
-  }[];
-  sourcing: string;
-  features: string[];
-};
 
 const ProductDesc = () => {
   const { productslug } = useParams<{ productslug: string }>();
   const [activeTab, setActiveTab] = useState("Description");
 
-  const productsfinal = products;
-
-  const product = productsfinal.find((p) => p.slug === productslug);
+  const product = products.find((p) => p.slug === productslug);
 
   if (!product) {
     return (
@@ -84,24 +66,19 @@ const ProductDesc = () => {
               ))}
             </div>
 
-            {/* Tab Content */}
-            <div className="">
+            <div>
               {activeTab === "Description" && (
-                <div>
-                  <p className="text-gray-700 text-justify">
-                    {product.description}
-                  </p>
-                </div>
+                <p className="text-gray-700 text-justify">
+                  {product.description}
+                </p>
               )}
 
               {activeTab === "Features" && (
-                <div>
-                  <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  {product.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
               )}
 
               {activeTab === "Sizing" && (
@@ -118,28 +95,23 @@ const ProductDesc = () => {
               )}
 
               {activeTab === "Sourcing" && (
-                <div>
-                  <p className="text-gray-700">{product.sourcing}</p>
-                </div>
+                <p className="text-gray-700">{product.sourcing}</p>
               )}
 
               {activeTab === "Applications" && (
-                <div>
-                  <ul className="list-disc list-inside text-gray-700 space-y-2  ">
-                    {product.application.map((application, idx) => (
-                      <li key={idx}>{application}</li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  {product.application.map((application, idx) => (
+                    <li key={idx}>{application}</li>
+                  ))}
+                </ul>
               )}
             </div>
           </div>
         </div>
       )}
 
-      <hr className="w-[200px] md:w-[780px] h-1 mx-auto my-4 bg-skincare-pastel-green border-0 rounded-sm md:my-10 dark:bg-gray-700" />
+      <hr className="w-[200px] md:w-[780px] h-1 mx-auto my-4 bg-skincare-pastel-green border-0 rounded-sm md:my-10" />
 
-      {/* Products Section */}
       <div className="mt-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center md:mb-4 mb-0">
           Explore More
