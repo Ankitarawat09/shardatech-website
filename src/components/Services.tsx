@@ -40,7 +40,7 @@ const ServicesCard = () => {
       title: "Animal Feeds",
       description:
         "Bulk supply of Distillers Dried Grains with Solubles (DDGS) and Corn Gluten, offering premium protein and energy to optimize ruminant health and performance, while ensuring a sustainable and cost-effective feed solution.",
-      image: "/assets/animal-feeds.png",
+      image: "/assets/animal-feed.png",
       isLink: false,
       category: "Animal Feeds",
     },
