@@ -20,7 +20,7 @@ const PharmaceuticalsSection = () => {
         <div className="flex flex-col lg:flex-row gap-8 mb-12">
           <div className="max-w-md lg:max-w-xl mx-auto">
             <img
-              src={`/${product.image}`}
+              src={`${product.image}`}
               alt={product.name}
               className="w-full h-auto rounded-xl shadow"
             />

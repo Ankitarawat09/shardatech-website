@@ -487,7 +487,7 @@ const products: Product[] = [
     name: "Formaldehyde",
     slug: "formaldehyde",
     category: "Methanol",
-    image: "/assets/formaldehyde.png",
+    image: "/assets/formaldeyde.jpg",
     overview:
       "Highly reactive and versatile chemical used in resins, plastics, textiles, and disinfectants. Supplied as a 37–50% aqueous solution.",
     description:
@@ -567,7 +567,7 @@ const products: Product[] = [
     name: "Methyl Tertiary Butyl Ether",
     slug: "methyl-tertiary-butyl-ether",
     category: "Methanol",
-    image: "/assets/mtbe.png",
+    image: "/assets/mtbe.jpg",
     overview:
       "High-octane fuel additive used to improve combustion efficiency and reduce engine knocking in gasoline blends.",
     description:
