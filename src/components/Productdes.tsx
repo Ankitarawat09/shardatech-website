@@ -52,7 +52,7 @@ const ProductDesc = () => {
             <img
               src={`${product.image}`}
               alt={product.name}
-              className="w-full h-auto rounded-xl shadow"
+              className="md:w-[400px] md:h-[400px] object-cover rounded-xl shadow"
             />
           </div>
 
@@ -90,7 +90,7 @@ const ProductDesc = () => {
 
               {activeTab === "Specifications" &&
                 product["product specification"] && (
-                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                  <ul className="list-disc list-outside pl-5 text-gray-700 space-y-2">
                     {product["product specification"].map((spec, idx) => (
                       <li key={idx}>{spec}</li>
                     ))}

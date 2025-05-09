@@ -16,7 +16,7 @@ const ServicesCard = () => {
       title: "Methanol",
       description:
         "Our methanol products are known for their versatility and high quality, making them ideal for applications in fuel, solvents, chemicals, and more.",
-      image: "/assets/MTBE.png",
+      image: "/assets/Methanol.png",
       isLink: false,
       category: "Methanol",
     },

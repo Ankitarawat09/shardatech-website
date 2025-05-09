@@ -35,19 +35,19 @@ const SubProductSection = () => {
   return (
     <section className="bg-white">
       <div className="container mx-auto px-6 py-6 md:px-10 md:py-6 ">
-        <div className="flex pl-96 items-center">
+        <div className="flex md:pl-96 md:items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               {activeCategory} Products
             </h2>
-            <p className="text-black-700 text-center max-w-3xl mx-auto mb-10">
+            <p className="hidden md:block text-black-700 text-center max-w-3xl mx-auto mb-10">
               Discover our range of {activeCategory} products across industries.
             </p>
           </div>
           <Link to="/products">
             <Button
               variant="outline"
-              className={`rounded-3xl md:ml-96 px-6 py-2 font-medium transition-all duration-300 bg-[#749274] text-white`}
+              className={`rounded-3xl md:ml-96 px-6 py-2 font-medium transition-all duration-300 bg-[#749274] text-white hidden md:block`}
             >
               Back
             </Button>
@@ -92,7 +92,7 @@ const SubProductSection = () => {
             {filteredProducts.map((product) => (
               <Card
                 key={product.id}
-                className="overflow-hidden border border-skincare-pastel-green hover:border-[#404D36] transform transition-transform duration-300 hover:scale-105 shadow-sm hover:shadow-lg p-4"
+                className="group overflow-hidden border border-skincare-pastel-green group-hover:border-[#404D36] transform transition-transform duration-300 hover:scale-105 shadow-sm hover:shadow-lg p-4"
               >
                 <div className="relative pt-[100%]">
                   <img
@@ -102,10 +102,13 @@ const SubProductSection = () => {
                   />
                 </div>
                 <CardContent className="py-3 px-6">
-                  <h3 className="font-semibold text-lg mb-2 text-center">
-                    {product.name}
-                  </h3>
+                  <div className="h-[4.4rem] overflow-hidden">
+                    <h3 className="font-semibold text-md mb-2 text-center transition-all duration-300 ease-in-out">
+                      {product.name}
+                    </h3>
+                  </div>
                 </CardContent>
+
                 <CardFooter className="px-6 pt-0">
                   <Link
                     to={`/product/subproductsection/productdescription/${product?.slug}`}

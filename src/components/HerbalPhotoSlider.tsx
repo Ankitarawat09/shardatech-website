@@ -68,7 +68,7 @@ const HerbalPhotoSlider: React.FC = () => {
     if (isAutoPlaying && carouselApiRef.current) {
       interval = setInterval(() => {
         carouselApiRef.current.scrollNext();
-      }, 3000);
+      }, 2000);
     }
 
     return () => {

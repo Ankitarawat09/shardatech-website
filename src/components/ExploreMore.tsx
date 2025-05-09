@@ -1,212 +1,43 @@
 import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-type Product = {
-  id: number;
-  name: string;
-  slug: string;
-  category: string;
-  image: string;
-  overview: string;
-  description: string;
-  sizing: {
-    heading: string;
-    description: string;
-  }[];
-  sourcing: string;
-  features: string[];
-};
+import { useMemo } from "react";
+
+// Import products from central file
+import products from "@/data"; // assuming all products are stored here
+
 const ExploreMore = () => {
   const { productslug } = useParams<{ productslug: string }>();
 
-  const products: Product[] = [
-    {
-      id: 1,
-      name: "Coconut Vinegar",
-      slug: "coconut-vinegar",
-      category: "Coconut",
-      image: "/assets/coconut-vinegar.jpg",
-      overview:
-        "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
-      description:
-        "UG Enterprises Coconut Vinegar is made from naturally fermented coconut water, delivering a rich, nutrient-dense flavoring and preservative option for food manufacturers. This vinegar is abundant in essential minerals like potassium, calcium, and magnesium, making it a healthier and more natural alternative to synthetic vinegar. Ideal for use in pickles, sauces, condiments, and marinades, Coconut Vinegar enhances the flavor and extends the shelf life of various food products. With its mild acidity and naturally derived nutrients, it is also well-suited for applications where quality and authenticity are essential. Available in bulk, our Coconut Vinegar supports efficient production processes for companies looking to elevate their offerings with a premium, natural ingredient.",
-      sizing: [
-        {
-          heading: "Packaging Options",
-          description:
-            "Available in 5L, 10L, and 20L containers for bulk purchases.",
-        },
-        {
-          heading: "Shelf Life",
-          description: "18 months from the date of manufacture.",
-        },
-        {
-          heading: "Storage Instructions",
-          description: "Store in a cool, dry place away from direct sunlight.",
-        },
-      ],
-      sourcing:
-        "Our Coconut Vinegar is produced from high-quality coconut water, naturally fermented to retain nutrients and flavor. This product adheres to industrial standards, ensuring consistent quality for large-scale production.",
-      features: [
-        "Naturally fermented, rich in essential minerals and vitamins",
-        "Serves as a natural preservative and flavoring agent",
-        "Versatile for use in pickles, sauces, and other condiments",
-        "A healthier alternative to synthetic vinegar, with mild acidity",
-      ],
-    },
-    {
-      id: 2,
-      name: "Coconut Water",
-      slug: "coconut-water",
-      category: "Coconut",
-      image: "/assets/coconut-water.jpeg",
-      overview:
-        "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
-      description:
-        "UG Enterprises Coconut Vinegar is made from naturally fermented coconut water, delivering a rich, nutrient-dense flavoring and preservative option for food manufacturers. This vinegar is abundant in essential minerals like potassium, calcium, and magnesium, making it a healthier and more natural alternative to synthetic vinegar. Ideal for use in pickles, sauces, condiments, and marinades, Coconut Vinegar enhances the flavor and extends the shelf life of various food products. With its mild acidity and naturally derived nutrients, it is also well-suited for applications where quality and authenticity are essential. Available in bulk, our Coconut Vinegar supports efficient production processes for companies looking to elevate their offerings with a premium, natural ingredient.",
-      sizing: [
-        {
-          heading: "Packaging Options",
-          description:
-            "Available in 5L, 10L, and 20L containers for bulk purchases.",
-        },
-        {
-          heading: "Shelf Life",
-          description: "18 months from the date of manufacture.",
-        },
-        {
-          heading: "Storage Instructions",
-          description: "Store in a cool, dry place away from direct sunlight.",
-        },
-      ],
-      sourcing:
-        "Our Coconut Vinegar is produced from high-quality coconut water, naturally fermented to retain nutrients and flavor. This product adheres to industrial standards, ensuring consistent quality for large-scale production.",
-      features: [
-        "Naturally fermented, rich in essential minerals and vitamins",
-        "Serves as a natural preservative and flavoring agent",
-        "Versatile for use in pickles, sauces, and other condiments",
-        "A healthier alternative to synthetic vinegar, with mild acidity",
-      ],
-    },
-    {
-      id: 3,
-      name: "Coconut Oil",
-      slug: "coconut-oil",
-      category: "Coconut",
-      image: "/assets/coconut-oil.jpg",
-      overview:
-        "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
-      description:
-        "UG Enterprises Coconut Vinegar is made from naturally fermented coconut water, delivering a rich, nutrient-dense flavoring and preservative option for food manufacturers. This vinegar is abundant in essential minerals like potassium, calcium, and magnesium, making it a healthier and more natural alternative to synthetic vinegar. Ideal for use in pickles, sauces, condiments, and marinades, Coconut Vinegar enhances the flavor and extends the shelf life of various food products. With its mild acidity and naturally derived nutrients, it is also well-suited for applications where quality and authenticity are essential. Available in bulk, our Coconut Vinegar supports efficient production processes for companies looking to elevate their offerings with a premium, natural ingredient.",
-      sizing: [
-        {
-          heading: "Packaging Options",
-          description:
-            "Available in 5L, 10L, and 20L containers for bulk purchases.",
-        },
-        {
-          heading: "Shelf Life",
-          description: "18 months from the date of manufacture.",
-        },
-        {
-          heading: "Storage Instructions",
-          description: "Store in a cool, dry place away from direct sunlight.",
-        },
-      ],
-      sourcing:
-        "Our Coconut Vinegar is produced from high-quality coconut water, naturally fermented to retain nutrients and flavor. This product adheres to industrial standards, ensuring consistent quality for large-scale production.",
-      features: [
-        "Naturally fermented, rich in essential minerals and vitamins",
-        "Serves as a natural preservative and flavoring agent",
-        "Versatile for use in pickles, sauces, and other condiments",
-        "A healthier alternative to synthetic vinegar, with mild acidity",
-      ],
-    },
-    {
-      id: 4,
-      name: "Coconut Virgin Oil",
-      slug: "coconut-veroil",
-      category: "Coconut",
-      image: "/assets/virgin-c-oil.png",
-      overview:
-        "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
-      description:
-        "UG Enterprises Coconut Vinegar is made from naturally fermented coconut water, delivering a rich, nutrient-dense flavoring and preservative option for food manufacturers. This vinegar is abundant in essential minerals like potassium, calcium, and magnesium, making it a healthier and more natural alternative to synthetic vinegar. Ideal for use in pickles, sauces, condiments, and marinades, Coconut Vinegar enhances the flavor and extends the shelf life of various food products. With its mild acidity and naturally derived nutrients, it is also well-suited for applications where quality and authenticity are essential. Available in bulk, our Coconut Vinegar supports efficient production processes for companies looking to elevate their offerings with a premium, natural ingredient.",
-      sizing: [
-        {
-          heading: "Packaging Options",
-          description:
-            "Available in 5L, 10L, and 20L containers for bulk purchases.",
-        },
-        {
-          heading: "Shelf Life",
-          description: "18 months from the date of manufacture.",
-        },
-        {
-          heading: "Storage Instructions",
-          description: "Store in a cool, dry place away from direct sunlight.",
-        },
-      ],
-      sourcing:
-        "Our Coconut Vinegar is produced from high-quality coconut water, naturally fermented to retain nutrients and flavor. This product adheres to industrial standards, ensuring consistent quality for large-scale production.",
-      features: [
-        "Naturally fermented, rich in essential minerals and vitamins",
-        "Serves as a natural preservative and flavoring agent",
-        "Versatile for use in pickles, sauces, and other condiments",
-        "A healthier alternative to synthetic vinegar, with mild acidity",
-      ],
-    },
-    {
-      id: 5,
-      name: "Desiccated Coconut",
-      slug: "desiccated-coconut",
-      category: "Coconut",
-      image: "/assets/dessicated-coconut.jpeg",
-      overview:
-        "Our Coconut Vinegar, naturally fermented from coconut water, is a versatile preservative and flavoring agent rich in minerals and vitamins. Ideal for use in food production, it offers a natural alternative to synthetic vinegar.",
-      description:
-        "UG Enterprises Coconut Vinegar is made from naturally fermented coconut water, delivering a rich, nutrient-dense flavoring and preservative option for food manufacturers. This vinegar is abundant in essential minerals like potassium, calcium, and magnesium, making it a healthier and more natural alternative to synthetic vinegar. Ideal for use in pickles, sauces, condiments, and marinades, Coconut Vinegar enhances the flavor and extends the shelf life of various food products. With its mild acidity and naturally derived nutrients, it is also well-suited for applications where quality and authenticity are essential. Available in bulk, our Coconut Vinegar supports efficient production processes for companies looking to elevate their offerings with a premium, natural ingredient.",
-      sizing: [
-        {
-          heading: "Packaging Options",
-          description:
-            "Available in 5L, 10L, and 20L containers for bulk purchases.",
-        },
-        {
-          heading: "Shelf Life",
-          description: "18 months from the date of manufacture.",
-        },
-        {
-          heading: "Storage Instructions",
-          description: "Store in a cool, dry place away from direct sunlight.",
-        },
-      ],
-      sourcing:
-        "Our Coconut Vinegar is produced from high-quality coconut water, naturally fermented to retain nutrients and flavor. This product adheres to industrial standards, ensuring consistent quality for large-scale production.",
-      features: [
-        "Naturally fermented, rich in essential minerals and vitamins",
-        "Serves as a natural preservative and flavoring agent",
-        "Versatile for use in pickles, sauces, and other condiments",
-        "A healthier alternative to synthetic vinegar, with mild acidity",
-      ],
-    },
-  ];
+  const currentProduct = useMemo(() => {
+    return products.find((p) => p.slug === productslug);
+  }, [productslug]);
 
-  // ✅ Filter out the product matching the URL slug
-  const filteredProducts = products.filter(
-    (product) => product.slug !== productslug
-  );
+  const similarProducts = useMemo(() => {
+    if (!currentProduct) return [];
+    if (currentProduct.category === "Herbal Medicine") return [];
+
+    return products
+      .filter(
+        (p) => p.category === currentProduct.category && p.slug !== productslug
+      )
+      .slice(0, 4);
+  }, [currentProduct, productslug]);
+
+  if (!currentProduct || currentProduct.category === "Herbal Medicine")
+    return null;
 
   return (
-    <section className="py-16 bg-white">
+    <section className="bg-white py-8 mt-12 border-t">
       <div className="container mx-auto px-6 md:px-10">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+          Explore More {currentProduct.category} Products
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {filteredProducts.map((product) => (
+          {similarProducts.map((product) => (
             <div
               key={product.id}
-              className="border border-gray-200 hover:border-[#5D835D] rounded-lg shadow-sm transition-all duration-300 overflow-hidden"
+              className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              {/* Image */}
               <div className="relative pt-[100%]">
                 <img
                   src={product.image}
@@ -214,18 +45,14 @@ const ExploreMore = () => {
                   className="absolute top-0 left-0 w-full h-full object-cover"
                 />
               </div>
-
-              {/* Content */}
-              <div className="p-4 flex flex-col items-center">
-                <h3 className="font-semibold text-lg text-center mb-2">
+              <div className="p-4">
+                <h3 className="font-semibold text-md text-center mb-2">
                   {product.name}
                 </h3>
-
                 <Link
-                  to={`/productdescription/${product.slug}`}
-                  className="w-full"
+                  to={`/product/subproductsection/productdescription/${product.slug}`}
                 >
-                  <Button className="w-full bg-[#5D835D] hover:bg-[#749274] text-white mt-2">
+                  <Button className="w-full bg-[#5D835D] hover:bg-[#749274] mt-2">
                     Read More
                   </Button>
                 </Link>
