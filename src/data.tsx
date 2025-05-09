@@ -55,7 +55,7 @@ const products: Product[] = [
     name: "Frozen Coconut Water Concentrate without Preservatives",
     slug: "frozen-coconut-water-without-preservatives",
     category: "Coconut",
-    image: "/assets/coconut-water.jpg",
+    image: "/assets/frozen-coconut.jpg",
     overview:
       "Our Frozen Coconut Water without Preservatives provides a pure and natural source of coconut water, frozen to retain freshness and nutritional integrity. This preservative-free option offers an authentic coconut taste, ideal for manufacturers seeking a clean-label ingredient for their food and beverage products.",
     description:
@@ -211,7 +211,7 @@ const products: Product[] = [
     name: "Frozen Coconut Meat",
     slug: "frozen-coconut-meat",
     category: "Coconut",
-    image: "/assets/coconut-meat.jpg",
+    image: "/assets/frozen-meat.png",
     overview:
       "Our mature coconut meat is the thick, white flesh scooped from mature coconuts—carefully cleaned, portioned, and flash-frozen with no additives or preservatives. It offers the perfect balance of richness and mild sweetness, making it a versatile superfood ingredient.\n\nWe also offer tender coconut pulp which is the soft flesh inside the Tender Coconut. The Pulp is a thin film of white layer formed on the inside of the shell housing the Tender Coconut Water. Tender Coconut Pulp is available in Medium or Thick grade depending on the age of the Tender Coconut at the time of harvest.\n• Medium tender coconut pulp is sweeter and smoothly solid, 7-8 mm thick\n• Thick tender coconut pulp is sweeter and solid, 8-9 mm thick.\n• Mature coconut meat, 9-11mm thick",
     description:
@@ -243,7 +243,7 @@ const products: Product[] = [
     name: "Semi Husked Coconut",
     slug: "semi-husked-coconut",
     category: "Coconut",
-    image: "/assets/semi-husked-coconut.jpg",
+    image: "/assets/semi-husk.jpg",
     overview:
       "A semi-husked coconut is a fully-ripened coconut with the husk left intact over the 'eye spot' of the coconut. The 'eye spot' is a sensitive area of the coconut that is protected by the husk, which helps extend the coconut's shelf life.",
     description:
