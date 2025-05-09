@@ -109,7 +109,6 @@ const ProductDesc = () => {
                   ))}
                 </div>
               )}
-
               {activeTab === "Applications" && product.application && (
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
                   {product.application.map((application, idx) => (
