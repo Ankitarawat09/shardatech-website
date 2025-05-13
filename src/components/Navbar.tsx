@@ -39,7 +39,6 @@ const Navbar = () => {
               Home
             </Link>
 
-            {/* Products Dropdown */}
             <div
               className="relative group"
               onMouseEnter={() => setIsProductsOpen(true)}
