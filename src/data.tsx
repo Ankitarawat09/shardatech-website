@@ -55,7 +55,7 @@ const products: Product[] = [
     name: "Frozen Coconut Water Concentrate without Preservatives",
     slug: "frozen-coconut-water-without-preservatives",
     category: "Coconut",
-    image: "/assets/frozen-coconut.jpg",
+    image: "/assets/cocowater.jpg",
     overview:
       "Our Frozen Coconut Water without Preservatives provides a pure and natural source of coconut water, frozen to retain freshness and nutritional integrity. This preservative-free option offers an authentic coconut taste, ideal for manufacturers seeking a clean-label ingredient for their food and beverage products.",
     description:

@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useMemo } from "react";
 import products from "@/data";
+import { Card, CardContent, CardFooter } from "./ui/card";
 
 // Utility to slugify category names
 const slugify = (text: string) =>
@@ -46,9 +47,9 @@ const ExploreMore = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {productsToShow.map((product) => (
-            <div
+            <Card
               key={product.id}
-              className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="group overflow-hidden border border-skincare-pastel-green group-hover:border-[#404D36] transform transition-transform duration-300 hover:scale-105 shadow-sm hover:shadow-lg p-4"
             >
               <div className="relative pt-[100%]">
                 <img
@@ -57,19 +58,25 @@ const ExploreMore = () => {
                   className="absolute top-0 left-0 w-full h-full object-cover"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-md text-center mb-2">
-                  {product.name}
-                </h3>
+              <CardContent className="py-3 px-6">
+                <div className="h-[4.4rem] overflow-hidden">
+                  <h3 className="font-semibold text-md mb-2 text-center transition-all duration-300 ease-in-out">
+                    {product.name}
+                  </h3>
+                </div>
+              </CardContent>
+
+              <CardFooter className="px-6 pt-0">
                 <Link
-                  to={`/product/subproductsection/productdescription/${product.slug}`}
+                  to={`/product/subproductsection/productdescription/${product?.slug}`}
+                  className="w-full"
                 >
-                  <Button className="w-full bg-[#5D835D] hover:bg-[#749274] mt-2">
+                  <Button className="w-full bg-[#5D835D] hover:bg-[#749274]">
                     Read More
                   </Button>
                 </Link>
-              </div>
-            </div>
+              </CardFooter>
+            </Card>
           ))}
         </div>
 
